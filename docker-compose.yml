@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  elevator:
+    build: .
+    volumes:
+      - .:/www/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=elevator
+      - DB_USER=root
+      - DB_PASSWORD=root
+
+  redis:
+    image: redis
+
+volumes:
+  data:

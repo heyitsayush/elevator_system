@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "33fea4b3-94ac-4043-be86-f6152847c70e",
+		"name": "Elevator System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7952070"
+	},
+	"item": [
+		{
+			"name": "Create a new elevator system",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"system_name\": \"System 1\",\r\n    \"number_of_elevators\": \"2\",\r\n    \"number_of_floors\": \"6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/elevator_systems/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"elevator_systems",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get elevator system information",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/elevator_systems/System 1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"elevator_systems",
+						"System 1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create elevator request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requested_from_floor\": 2,\r\n  \"requested_to_floor\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/elevator_systems/1/create_elevator_request",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"elevator_systems",
+						"1",
+						"create_elevator_request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get elevator requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/elevator_systems/1/elevators/1/requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"elevator_systems",
+						"1",
+						"elevators",
+						"1",
+						"requests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get elevator status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/elevator_systems/1/elevators/1/status/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"elevator_systems",
+						"1",
+						"elevators",
+						"1",
+						"status",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update elevator info",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 2,\r\n  \"elevator_number\": 2,\r\n  \"current_floor\": 1,\r\n  \"is_door_open\": false,\r\n  \"direction\": -1,\r\n  \"is_operational\": false,\r\n  \"elevator_system\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/elevator_systems/1/elevators/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"elevator_systems",
+						"1",
+						"elevators",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
